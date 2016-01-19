@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
 
+  get 'larders/index'
+
+  get 'larders/show'
+
+  get 'larders/edit'
+
+  get 'larders/create'
+
+  get 'larder/index'
+
+  get 'larder/show'
+
+  get 'larder/edit'
+
+  get 'larder/create'
+
+  get 'ingredients/index'
+
+  get 'ingredients/show'
+
+  get 'ingredients/edit'
+
+  get 'ingredients/create'
+
+  get 'ingredient/index'
+
+  get 'ingredient/show'
+
+  get 'ingredient/edit'
+
+  get 'ingredient/create'
+
   devise_for :users
 
   root to: 'static_pages#home'
