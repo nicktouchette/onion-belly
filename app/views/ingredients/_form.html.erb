@@ -1,0 +1,5 @@
+<%= form_for @ingredient do |f| %>
+  Ingredient Name : <%= f.text_field :name %><br />
+  Food Group      : <%= f.text_field :food_group %><br />
+  <%= f.submit %>
+<% end %>

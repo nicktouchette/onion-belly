@@ -1,41 +1,40 @@
 Rails.application.routes.draw do
 
-  get 'larders/index'
+  # get 'supplies/index'
 
-  get 'larders/show'
+  # get 'supplies/show'
 
-  get 'larders/edit'
+  # get 'supplies/edit'
 
-  get 'larders/create'
+  # get 'supplies/create'
 
-  get 'larder/index'
+  # get 'ingredients/edit'
 
-  get 'larder/show'
+  # get 'ingredients/create'
 
-  get 'larder/edit'
+  # get 'ingredient/index'
 
-  get 'larder/create'
+  # get 'ingredient/show'
 
-  get 'ingredients/index'
+  # get 'ingredient/edit'
 
-  get 'ingredients/show'
-
-  get 'ingredients/edit'
-
-  get 'ingredients/create'
-
-  get 'ingredient/index'
-
-  get 'ingredient/show'
-
-  get 'ingredient/edit'
-
-  get 'ingredient/create'
+  # get 'ingredient/create'
 
   devise_for :users
 
   root to: 'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
+  match '/search', to: 'static_pages#search', via: 'get', as: :search
+  match '/search/results', to: 'static_pages#results', via: 'post'
+
+  # INGREDIENT ROUTES
+  match '/ingredients', to: 'ingredients#index', via: 'get', as: :ingredients
+  match '/ingredients', to: 'ingredients#create', via: 'post'
+  match '/ingredients/new', to: 'ingredients#new', via: 'get', as: :ingredient_new
+  match '/ingredients/:id', to: 'ingredients#update', via: 'patch'
+  match '/ingredients/:id', to: 'ingredients#show', via: 'get', as: :ingredient
+  match '/ingredients/:id/edit', to: 'ingredients#edit', via: 'get', as: :ingredient_edit
+  match '/ingredients/:id', to: 'ingredients#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,2 +1,4 @@
-<h1>Ingredients#edit</h1>
-<p>Find me in app/views/ingredients/edit.html.erb</p>
+<h1>Edit Ingredient</h1>
+<%= render 'ingredients/form' %>
+<%= button_to "Edit", ingredient_path(@ingredient), :method => :get %>
+<%= button_to "Delete", @ingredient, :method => :delete %>

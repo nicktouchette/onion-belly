@@ -1,2 +1,10 @@
-<h1>Ingredients#index</h1>
-<p>Find me in app/views/ingredients/index.html.erb</p>
+<h1>Ingredients</h1>
+<%= button_to "Add Ingredient", ingredient_new_path, :method => :get %>
+<ul>
+<% @ingredients.each do |ingredient| %>
+  <li>Ingredient Name: <%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+  <li>Food Group     : <%= ingredient.food_group %></li>
+  <%= button_to "Edit", ingredient_path(ingredient), :method => :get %>
+  <%= button_to "Delete", ingredient, :method => :delete %><br/>
+<%end%>
+</ul>
