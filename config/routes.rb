@@ -24,8 +24,10 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
-  match '/search', to: 'static_pages#search', via: 'get', as: :search
-  match '/search/results', to: 'static_pages#results', via: 'post'
+
+  # SEARCH ROUTES
+  match '/search', to: 'search#new', via: 'get', as: :search
+  match '/search', to: 'search#search', via: 'post', as: :result
 
   # INGREDIENT ROUTES
   match '/ingredients', to: 'ingredients#index', via: 'get', as: :ingredients

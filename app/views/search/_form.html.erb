@@ -1,5 +1,6 @@
 <h1>Search</h1>
-<%= form_for @search do |f| %>
+<%= form_for :search do |f| %>
   Ingredient? <%= f.text_field :term %><br />
   <%= f.submit %>
 <% end %>
+<%= render :template => "ingredients/index"%>
