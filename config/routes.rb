@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # SUPPLIES ROUTES
   match '/supplies', to: 'supplies#index', via: 'get', as: :supplies
   match '/supplies', to: 'supplies#create', via: 'post', as: :supply_create
-  match '/supplies/:id', to: 'supplies#destroy', via: 'delete'
+  match '/supplies/:id', to: 'supplies#destroy', via: 'delete', as: :supply_delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

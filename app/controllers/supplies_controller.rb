@@ -13,6 +13,11 @@ class SuppliesController < ApplicationController
     end
   end
 
+  def destroy
+    @user.ingredients.destroy(params[:id])
+    render :index, :layout => false
+  end
+
   private
 
   def set_user

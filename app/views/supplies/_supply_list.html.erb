@@ -1,5 +1,7 @@
+<h2>Current Ingredients</h2>
+<h3>click to remove</h3>
 <% if !@supplies.blank? %>
   <% @supplies.each do |supply| %>
-    <%= supply.name %>
+    <%= link_to supply.name, supply_delete_path(supply), :method => 'delete', :remote => true %>
   <%end%>
 <%end%>

@@ -30,6 +30,7 @@ $(document).ready (function() {
   xmlHttp.send(null);
   }
   getSupplies();
+
   // function assignRadioClickHandler() {
   //   var radios = document.forms.searchForm.elements['search[food_group]'];
   //   liveLoad(radios[0].value);
