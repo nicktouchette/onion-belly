@@ -1,25 +1,4 @@
 Rails.application.routes.draw do
-
-  # get 'supplies/index'
-
-  # get 'supplies/show'
-
-  # get 'supplies/edit'
-
-  # get 'supplies/create'
-
-  # get 'ingredients/edit'
-
-  # get 'ingredients/create'
-
-  # get 'ingredient/index'
-
-  # get 'ingredient/show'
-
-  # get 'ingredient/edit'
-
-  # get 'ingredient/create'
-
   devise_for :users
 
   root to: 'static_pages#home'
@@ -42,7 +21,6 @@ Rails.application.routes.draw do
   # SUPPLIES ROUTES
   match '/supplies', to: 'supplies#index', via: 'get', as: :supplies
   match '/supplies', to: 'supplies#create', via: 'post', as: :supply_create
-  match '/supplies/:id', to: 'supplies#show', via: 'get', as: :supply
   match '/supplies/:id', to: 'supplies#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.

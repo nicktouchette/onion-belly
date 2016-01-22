@@ -3,15 +3,14 @@ class SuppliesController < ApplicationController
 
   def index
     @supplies = @user.ingredients.all
-  end
-
-  def show
-    @supply = @user.supplies.find(params[:id])
+    render :index, :layout => false
   end
 
   def create
     @ingredient = Ingredient.find_by(name: create_params[:ingredient])
-    @user.supplies.create(ingredient: @ingredient)
+    if !@ingredient.blank?
+      @user.supplies.create(ingredient: @ingredient)
+    end
   end
 
   private

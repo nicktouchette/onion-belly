@@ -1,1 +1,3 @@
-json.extract! @ingredient, :name
+if !@ingredient.blank?
+  json.extract! @ingredient, :name
+end

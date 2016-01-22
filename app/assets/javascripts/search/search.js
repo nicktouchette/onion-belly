@@ -1,7 +1,6 @@
 $(document).ready (function() {
 
   $('form').submit(function() {
-    console.log(this);
     if (this.method === 'post') {
       var valuesToSubmit = $(this).serialize();
       $.ajax({
@@ -11,25 +10,26 @@ $(document).ready (function() {
         dataType: "JSON"
       }).success(function(json){
         $("div#response_data").html("success " + json.name);
-        console.log("success", json);
+        $('input:text').val('');
+        getSupplies();
       });
       return false; // prevents normal behaviour
     }
   });
 
-  // function liveLoad(type) {
-  //   var content_div = document.getElementById("top_ingredients");
-  //   var xmlHttp = new XMLHttpRequest();
+  function getSupplies() {
+    var content_div = document.getElementById("my_supplies");
+    var xmlHttp = new XMLHttpRequest();
 
-  //   xmlHttp.onreadystatechange = function() {
-  //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-  //      content_div.innerHTML = xmlHttp.responseText;
-  //     }
-  //   };
-  // xmlHttp.open("GET", '/ingredients/by/' + type, true);
-  // xmlHttp.send(null);
-  // }
-
+    xmlHttp.onreadystatechange = function() {
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+       content_div.innerHTML = xmlHttp.responseText;
+      }
+    };
+  xmlHttp.open("GET", '/supplies', true);
+  xmlHttp.send(null);
+  }
+  getSupplies();
   // function assignRadioClickHandler() {
   //   var radios = document.forms.searchForm.elements['search[food_group]'];
   //   liveLoad(radios[0].value);

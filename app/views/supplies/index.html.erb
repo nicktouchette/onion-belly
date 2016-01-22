@@ -1,6 +1,1 @@
-<h1>Show Supplies</h1>
-<% if !@supplies.blank? %>
-  <% @supplies.each do |supply| %>
-    <%= supply.name %>
-  <%end%>
-<%end%>
+<%= render 'supplies/supply_list' %>
