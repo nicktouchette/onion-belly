@@ -1,7 +1,7 @@
 $(document).ready (function() {
 
   $('form').submit(function() {
-    if (this.method === 'post') {
+    if (this.method === 'post' && this.action.includes('/supplies')) {
       var valuesToSubmit = $(this).serialize();
       $.ajax({
         type: "POST",
@@ -29,7 +29,11 @@ $(document).ready (function() {
   xmlHttp.open("GET", '/supplies', true);
   xmlHttp.send(null);
   }
-  getSupplies();
+
+  var content_div = document.getElementById("my_supplies");
+  if (content_div) {
+    getSupplies();
+  }
 
   // function assignRadioClickHandler() {
   //   var radios = document.forms.searchForm.elements['search[food_group]'];
