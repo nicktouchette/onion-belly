@@ -10,7 +10,7 @@ class SuppliesController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.find(params[:add_ingredient])
+    @ingredient = Ingredient.find_by(name: create_params[:ingredient])
     @user.supplies.create(ingredient: @ingredient)
   end
 
@@ -18,5 +18,9 @@ class SuppliesController < ApplicationController
 
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  def create_params
+    params.require(:add).permit(:ingredient)
   end
 end

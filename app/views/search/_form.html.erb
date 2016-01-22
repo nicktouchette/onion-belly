@@ -1,13 +1,14 @@
 <h1>Search</h1>
-<%= form_for :supplies, :html => {:name => 'searchForm'} do |f| %>
-  Ingredient? <%= f.text_field :term, class: "typeahead" %><br />
-  Protein <%= radio_button("search", "food_group", "protein", :checked => true)%>
-  Vegetable <%= radio_button("search", "food_group", "vegetable")%>
-  Grain <%= radio_button("search", "food_group", "grain")%>
-  Fruit <%= radio_button("search", "food_group", "fruit")%>
-  Dairy <%= radio_button("search", "food_group", "dairy")%>
-  <%= f.submit %>
-<% end %>
+<div id="searchForm">
+  <%= form_for :add, url: {:controller => 'supplies', :action => 'create'} do |f| %>
+    Ingredient? <%= f.text_field :ingredient, class: "typeahead" %><br />
+    Protein <%= radio_button("search", "food_group", "protein", :checked => true)%>
+    Vegetable <%= radio_button("search", "food_group", "vegetable")%>
+    Grain <%= radio_button("search", "food_group", "grain")%>
+    Fruit <%= radio_button("search", "food_group", "fruit")%>
+    Dairy <%= radio_button("search", "food_group", "dairy")%>
+    <%= f.submit %>
+  <% end %>
 </div>
 
 <%= render 'search/top_ingredients' %>
