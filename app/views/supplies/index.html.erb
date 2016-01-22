@@ -1,2 +1,6 @@
-<h1>Supplies#index</h1>
-<p>Find me in app/views/supplies/index.html.erb</p>
+<h1>Show Supplies</h1>
+<% if !@supplies.blank? %>
+  <% @supplies.each do |supply| %>
+    <%= supply.name %>
+  <%end%>
+<%end%>

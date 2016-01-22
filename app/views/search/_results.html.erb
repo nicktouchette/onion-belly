@@ -1,1 +1,5 @@
-<h1>You searched for <%=@search["term"] %></h1>
+<% if !@search.blank? %>
+  <h1>Search found <%=@search.name%> which is a <%=@search.food_group%></h1>
+<%else%>
+  <h1>No ingredient found by the name <%=@searched%></h1>
+<%end%>

@@ -30,6 +30,11 @@ class IngredientsController < ApplicationController
     redirect_to ingredients_path
   end
 
+  def type
+    @typelist = Ingredient.where(food_group: params[:type])
+    render :type, :layout => false
+  end
+
   private
 
   def set_ingredient

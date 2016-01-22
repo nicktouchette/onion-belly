@@ -1,0 +1,5 @@
+<ol>
+<%@typelist.each do |item|%>
+  <li><%=link_to item.name, ingredient_path(item)%></li>
+<%end%>
+</ol>

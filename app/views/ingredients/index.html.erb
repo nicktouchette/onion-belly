@@ -4,7 +4,10 @@
 <% @ingredients.each do |ingredient| %>
   <li>Ingredient Name: <%= link_to ingredient.name, ingredient_path(ingredient) %></li>
   <li>Food Group     : <%= ingredient.food_group %></li>
+  <%= button_to "Add to Supplies", { :controller => "supplies", :action => "create", :add_ingredient => ingredient, :remote => true, :method => :post }, :class => "ajax_trigger" %>
   <%= button_to "Edit", ingredient_path(ingredient), :method => :get %>
   <%= button_to "Delete", ingredient, :method => :delete %><br/>
 <%end%>
 </ul>
+
+<div id="response_data">

@@ -37,6 +37,13 @@ Rails.application.routes.draw do
   match '/ingredients/:id', to: 'ingredients#show', via: 'get', as: :ingredient
   match '/ingredients/:id/edit', to: 'ingredients#edit', via: 'get', as: :ingredient_edit
   match '/ingredients/:id', to: 'ingredients#destroy', via: 'delete'
+  match '/ingredients/by/:type', to: 'ingredients#type', via: 'get'
+
+  # SUPPLIES ROUTES
+  match '/supplies', to: 'supplies#index', via: 'get', as: :supplies
+  match '/supplies', to: 'supplies#create', via: 'post', as: :supply_create
+  match '/supplies/:id', to: 'supplies#show', via: 'get', as: :supply
+  match '/supplies/:id', to: 'supplies#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

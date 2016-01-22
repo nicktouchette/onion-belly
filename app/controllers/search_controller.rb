@@ -4,7 +4,8 @@ class SearchController < ApplicationController
   end
 
   def search
-    @search = search_params
+    @searched = search_params['term']
+    @search = Ingredient.find_by(name: search_params['term'])
   end
 
   private
