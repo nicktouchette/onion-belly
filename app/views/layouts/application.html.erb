@@ -23,7 +23,9 @@
     <% end %>
   </p>
 
-  <div id="my_supplies"><%= render 'supplies/supply_list' %></div>
+  <% if user_signed_in? %>
+    <div id="my_supplies"><%= render 'supplies/supply_list' %></div>
+  <% end %>
 
   <main>
      <%= render 'layouts/messages' %>
