@@ -1,5 +1,8 @@
-<%= form_for @ingredient do |f| %>
-  Ingredient Name : <%= f.text_field :name %><br />
-  Food Group      : <%= f.text_field :food_group %><br />
-  <%= f.submit %>
-<% end %>
+<ul>
+  <%= form_for @ingredient do |f| %>
+    <pre><li>Ingredient Name : <%= f.text_field :name %></li></pre>
+    <pre><li>Food Group      : <%= f.text_field :food_group %></li></pre>
+    <pre><li>Image           : <%= f.text_field :image %></li></pre>
+    <%= f.submit %>
+  <% end %>
+</ul>

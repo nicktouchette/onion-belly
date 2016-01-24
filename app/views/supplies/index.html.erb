@@ -1,1 +1,15 @@
-<%= render 'supplies/supply_list' %>
+<h2>Current Ingredients</h2>
+<h3>click to remove</h3>
+
+<ul id="supplies">
+  <%= render partial: "supply", collection: @supplies %>
+</ul>
+
+<h1>Search</h1>
+<div id="searchForm">
+  <%= form_for(@supply, remote: true) do |f| %>
+    <%= hidden_field :supply, :id %>
+    Ingredient? <%= f.text_field :name, class: "typeahead" %>
+    <%= f.submit %>
+  <% end %>
+</div>

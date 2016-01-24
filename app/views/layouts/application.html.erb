@@ -9,27 +9,36 @@
 
 <body>
   <header>
-    <%= render 'layouts/navigation' %>
+
+    <!-- Navbar -->
+    <div id="menu">
+      <%= render 'layouts/navigation' %>
+    </div>
+
+    <!-- User Settings -->
+    <div id="usercontrol">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+
   </header>
 
-  <div class="usercontrol">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
-  </div>
-
-  <% if user_signed_in? %>
-    <div id="my_supplies"><%= render 'supplies/supply_list' %></div>
-  <% end %>
-
   <main>
-     <%= render 'layouts/messages' %>
-     <%= yield %>
+    <!-- Status Messages -->
+    <div id="messages">
+      <%= render 'layouts/messages' %>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+      <%= yield %>
+    </div>
   </main>
 </body>
 
