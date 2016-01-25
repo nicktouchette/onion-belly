@@ -6,7 +6,6 @@
       <div class="ingredient" style="background-image: url(<%=ingredient.image%>)">
         <h2><%= link_to ingredient.name, ingredient_path(ingredient) %></h2>
         <p><%= ingredient.food_group %></p>
-        <%=ingredient.image%>
       </div>
       <div class="button-panel">
         <%= button_to "Edit", ingredient_edit_path(ingredient), :method => :get %>
