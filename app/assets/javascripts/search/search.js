@@ -26,5 +26,4 @@ $(document).ready (function() {
   }).on('ajax:error', function (evt, xhr, status, error) {
     console.log("Ingredient Exists");
   });
-
 });

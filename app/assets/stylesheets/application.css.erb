@@ -14,6 +14,14 @@
  *= require_self
  */
 
+html {
+  background: url(<%= asset_path 'chopping-board-texture.jpg'%>) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,12 +29,14 @@
 }
 
 body {
-  background-color: #595;
   font-family: "Arial", sans-serif;
+  margin: 10px;
+  color: white;
 }
 
 a {
   text-decoration: none;
+  color: yellow;
 }
 
 ul {
@@ -89,11 +99,9 @@ ul {
   margin: 5px;
 }
 
-.logo {
+.logo img {
   float: left;
   margin-right: 20px;
+  height: 90vh;
   text-align: center;
-}
-.logo img {
-    width: 300px;
 }
