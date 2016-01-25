@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -15,7 +15,7 @@
  */
 
 html {
-  background: url(<%= asset_path 'chopping-board-texture.jpg'%>) no-repeat center center fixed;
+  background: asset_url("chopping-board-texture.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
