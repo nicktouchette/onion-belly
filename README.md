@@ -1,7 +1,7 @@
 # OnionBelly
 A rails based app for food aggregation.
 
-[Live Link](https://gentle-springs-72342.herokuapp.com)<br/>
+[Live Link](https://git.heroku.com/onionbelly.git)<br/>
 [Trello Board](https://trello.com/b/S038PWJD/onion-belly)
 
 ![Erd Diagram](http://i.imgur.com/07WZwWx.png)
