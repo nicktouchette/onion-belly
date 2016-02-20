@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ajax:success', 'a[data-remote]', (e, data, status, xhr) ->
-  $(this).remove()
+  $(this).parent().remove()
 
 $(document).on 'ajax:success', 'input[data-remote]', (e, data, status, xhr) ->
   console.log("WORKED")
