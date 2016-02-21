@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 form.search-bar {
-  @include span-columns(12);
   ///////////////////////////////////////////////////////////////////////////////////
   $base-spacing: 1.5em !default;
   $base-border-color: gainsboro !default;
@@ -26,13 +25,12 @@ form.search-bar {
     display: block;
     font-size: 1em;
     font-style: italic;
-    margin: 0;
+    margin: 0 0 20px 0;
     padding: ($base-spacing / 3) ($base-spacing / 3);
     position: relative;
   }
 
   input[type=submit] {
-    // @include position(absolute, 0em 0em 0em null);
     @include span-columns(1 of 12);
     outline: none;
     padding: ($base-spacing / 3) ($base-spacing / 3);
@@ -40,7 +38,7 @@ form.search-bar {
 }
 
 .twitter-typeahead {
-  @include span-columns(10 of 12);
+  @include span-columns(7 of 12, block-collapse);
 }
 
 .tt-hint {

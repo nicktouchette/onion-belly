@@ -12,7 +12,7 @@
  */
 
 @import "bourbon";
-// $visual-grid: true !default;
+$visual-grid: false !default;
 
 @import "neat";
 @import "base/base";
@@ -43,8 +43,13 @@ body {
   }
 }
 
+#search {
+  @include span-columns(12);
+  @include shift(2);
+}
+
 #supplies {
-  width: 600px;
+  @include span-columns(8);
 
   li {
     display: inline;
@@ -53,11 +58,14 @@ body {
       @include button(#555);
       border-radius: 15px;
       @include padding(2px 10px 2px null);
+      margin: 1px
     }
   }
 
   span {
-    padding-left: 10px
+    padding-left: 1px;
+    color: #222;
+    text-shadow: 1px 1px #666;
   }
 }
 
@@ -66,12 +74,12 @@ body {
   @include padding(5px 20px null null)
 }
 
-@mixin panel() {
+@mixin panel($col) {
+  @include span-columns($col of 12);
   background-color: rgba(4,4,4,.6);
-  width: 400px;
   padding: 10px;
   border-radius: 15px;
-  margin: 20px auto;
+  // margin: 20px;
 
   h2 {
     font-size: 36px;
@@ -89,26 +97,27 @@ form {
 
   img {
     @include span-columns(3);
-    margin: 20px;
     height: 416px;
-    width: auto;
   }
 }
 
 form#new_user {
-  @include span-columns(9);
-  @include omega();
-  @include panel;
+  @include panel(5);
+}
+
+form#edit_user {
+  @include panel(5);
+  @include shift(2);
 }
 
 form.edit_ingredient {
-  @include panel;
-  width: 75%;
+  @include panel(6);
+  @include shift(3);
 }
 
 form.new_ingredient {
-  @include panel;
-  width: 75%;
+  @include panel(6);
+  @include shift(3);
 }
 
 #test {
@@ -116,7 +125,6 @@ form.new_ingredient {
 
   article {
     @include span-columns(2 of 12);
-    // @include omega(4n);
     background-color: black;
     border: 2px solid green;
     height: 55px;
