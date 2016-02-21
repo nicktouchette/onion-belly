@@ -15,62 +15,52 @@
 @import "neat";
 @import "base/base";
 @import "search";
+@import "flashmessages";
+@import "navigation";
 
-// html {
-//   background: asset_url("chopping-board-texture.jpg") no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
+html {
+  background: asset_url("chopping-board-texture.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
+body {
+  font-family: $helvetica;
+  margin: 10px;
+  color: white;
+}
 
-// body {
-//   font-family: "Arial", sans-serif;
-//   margin: 10px;
-//   color: white;
-// }
-
-// a {
-//   text-decoration: none;
-//   color: yellow;
-// }
-
-// ul {
-//   list-style: none;
-// }
+a {
+  color: yellow;
+}
 
 .ingredient {
-  @include size(200px 125px);
+  @include size(200px 150px);
   border: 1px solid black;
   background-size: 200px;
   background-position: center center;
   background-repeat: no-repeat;
-}
 
-.ingredient a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 
-.ingredient a:visited {
-  color: white;
-}
+  a:visited {
+    color: white;
+  }
 
-.ingredient p {
-  margin-top: 75px;
-  color: white;
-  background-color: rgba(0,0,0, .5);
-  text-align: center;
-}
+  p {
+    color: white;
+    background-color: rgba(0,0,0, .5);
+    text-align: center;
+  }
 
-.ingredient h2 {
-  background-color: rgba(0,0,0, .7);
-  text-align: center;
+  h2 {
+    background-color: rgba(0,0,0, .7);
+    text-align: center;
+  }
 }
 
 .button-panel {
@@ -83,7 +73,7 @@
 }
 
 .button-panel input{
-  @include size(50% 40px);
+  @include size(48% 40px);
   float: left;
 }
 
@@ -92,9 +82,9 @@
   float: left;
 }
 
-// .navbar ul {
-//   font-size: 32px;
-// }
+.navbar ul {
+  font-size: 32px;
+}
 
 // .navbar ul li {
 //   margin-right: 20px;
@@ -132,18 +122,43 @@
 
 #supplies {
   width: 600px;
+
+  li {
+    display: inline;
+
+    a {
+      @include button(#555);
+      border-radius: 15px;
+      @include padding(2px 10px 2px null);
+    }
+  }
+
+  span {
+    padding-left: 10px
+  }
 }
 
-#supplies li {
-  display: inline;
+#messages {
+
 }
 
-#supplies li a {
-  @include button(#555);
+#usercontrol {
+  text-align: right;
+  @include padding(5px 20px null null)
+}
+
+#content {
+  @include outer-container;
+}
+
+@mixin form-background() {
+  background-color: rgba(4,4,4,.6);
+  width: 400px;
+  padding: 10px;
   border-radius: 15px;
-  @include padding(2px 10px 2px null);
 }
 
-#supplies span {
-  padding-left: 10px
+form#new_user {
+  @include form-background;
 }
+

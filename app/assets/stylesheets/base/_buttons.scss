@@ -12,6 +12,7 @@
   font-weight: 600;
   line-height: 1;
   padding: $small-spacing $base-spacing;
+  margin: 2px;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
@@ -32,4 +33,10 @@
       background-color: $action-color;
     }
   }
+}
+
+input[value="Delete"] {
+  @extend button;
+  $action-color: red;
+  background-color: $action-color;
 }

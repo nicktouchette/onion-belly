@@ -8,35 +8,11 @@
 </head>
 
 <body>
-  <header>
-    <!-- Logo -->
-    <div class="logo">
-      <!-- <%= link_to image_tag "onionbellylogovertical2.png" %> -->
-    </div>
-
-    <!-- Navbar -->
-    <div id="menu">
-      <%= render 'layouts/navigation' %>
-
-      <!-- User Settings -->
-      <div id="usercontrol">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
-        <% end %>
-      </div>
-    </div>
-  </header>
+  <%= render 'layouts/navigation' %>
+  <div id="messages"><%= render 'layouts/messages' %></div>
 
   <main>
     <!-- Status Messages -->
-    <div id="messages">
-      <%= render 'layouts/messages' %>
-    </div>
 
     <!-- Main content -->
     <div id="content">

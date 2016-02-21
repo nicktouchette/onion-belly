@@ -1,11 +1,12 @@
 <h1>Search</h1>
-<div id="searchForm">
-  <%= form_for(@supply, remote: true) do |f| %>
+<div id="search">
+  <%= form_for(@supply, remote: true, html: {class: "search-bar"}) do |f| %>
     <%= hidden_field :supply, :id %>
-    Ingredient? <%= f.text_field :name, class: "typeahead" %>
-    <%= f.submit %>
+    <%= f.search_field :name, class: "typeahead", placeholder: "Enter Ingredient", role: "search" %>
+    <%= f.submit "Add" %>
   <% end %>
+
+  <ul id="supplies">
+    <%= render partial: "supply", collection: @supplies %>
+  </ul>
 </div>
-<ul id="supplies">
-  <%= render partial: "supply", collection: @supplies %>
-</ul>

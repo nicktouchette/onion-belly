@@ -1,7 +1,11 @@
   <div id="response_data"></div>
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <div class="flash-success">
+      <span><%= notice %></span>
+    </div>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <div class="flash-error">
+      <span><%= alert %></span>
+    </div>
   <% end %>
