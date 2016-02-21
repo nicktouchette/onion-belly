@@ -39,4 +39,10 @@ input[value="Delete"] {
   @extend button;
   $action-color: red;
   background-color: $action-color;
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
 }

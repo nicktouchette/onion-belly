@@ -8,12 +8,13 @@
 </head>
 
 <body>
-  <%= render 'layouts/navigation' %>
+  <% if user_signed_in? %>
+    <%= render 'layouts/navigation' %>
+  <%end%>
+  <!-- Status Messages -->
   <div id="messages"><%= render 'layouts/messages' %></div>
 
   <main>
-    <!-- Status Messages -->
-
     <!-- Main content -->
     <div id="content">
       <%= yield %>

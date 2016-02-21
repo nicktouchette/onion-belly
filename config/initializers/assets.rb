@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( onionbellylogo.png )
+Rails.application.config.assets.precompile += %w( onionbellylogovertical.png )

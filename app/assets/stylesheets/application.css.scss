@@ -30,18 +30,25 @@ body {
   font-family: $helvetica;
   margin: 10px;
   color: white;
-}
 
-a {
-  color: yellow;
+  a {
+    color: yellow;
+  }
 }
 
 .ingredient {
-  @include size(200px 150px);
+  $width: 200px;
+
+  @include size($width auto);
   border: 1px solid black;
-  background-size: 200px;
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin-bottom: 5px;
+
+  .image {
+    @include size($width 200px);
+    background-size: auto 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
   a {
     color: white;
@@ -52,29 +59,38 @@ a {
   }
 
   p {
+    width: $width;
     color: white;
     background-color: rgba(0,0,0, .5);
     text-align: center;
+    margin-top: -25px;
+    margin-bottom: 0px;
   }
 
   h2 {
     background-color: rgba(0,0,0, .7);
+    height: 25px;
     text-align: center;
+    margin-bottom: 0px;
   }
-}
 
-.button-panel {
-  @include size(200px 50px);
-  top: 100%;
-}
+  .button-panel {
+    @include size($width 45px);
+  }
 
-.button-panel input.ajax_trigger {
-  @include size(100%)
-}
+  .button-panel input.ajax_trigger {
+    @include size(100%)
+  }
 
-.button-panel input{
-  @include size(48% 40px);
-  float: left;
+  .button-panel input {
+    @include size(($width / 2 - 1) 45px);
+    float: left;
+    margin: 0px;
+
+    &:first-child {
+      margin-right: 2px;
+    }
+  }
 }
 
 .container {
@@ -85,40 +101,6 @@ a {
 .navbar ul {
   font-size: 32px;
 }
-
-// .navbar ul li {
-//   margin-right: 20px;
-//   float: left;
-// }
-
-// .logo img {
-//   margin-right: 20px;
-//   height: 90vh;
-//   text-align: center;
-//   float: left;
-// }
-
-// #menu {
-//   width: 67%;
-//   float: left;
-// }
-
-// #usercontrol {
-//   float: left;
-// }
-
-// main {
-//   float: left;
-// }
-
-// #content {
-//   width: 900px;
-//   float: left;
-// }
-
-// .clear {
-//   clear: both;
-// }
 
 #supplies {
   width: 600px;
@@ -138,10 +120,6 @@ a {
   }
 }
 
-#messages {
-
-}
-
 #usercontrol {
   text-align: right;
   @include padding(5px 20px null null)
@@ -151,14 +129,46 @@ a {
   @include outer-container;
 }
 
-@mixin form-background() {
+@mixin panel() {
   background-color: rgba(4,4,4,.6);
   width: 400px;
   padding: 10px;
   border-radius: 15px;
+  margin: 20px auto;
+
+  h2 {
+    font-size: 36px;
+  }
+}
+
+form {
+  margin: 0 auto;
+}
+
+.login_form {
+  @include outer-container;
+  @include shift(2);
+  margin-top: 20vh;
+
+  img {
+    @include span-columns(3);
+    margin: 20px;
+    height: 416px;
+  }
 }
 
 form#new_user {
-  @include form-background;
+  @include span-columns(9);
+  @include omega();
+  @include panel;
 }
 
+form.edit_ingredient {
+  @include panel;
+  width: 75%;
+}
+
+form.new_ingredient {
+  @include panel;
+  width: 75%;
+}
