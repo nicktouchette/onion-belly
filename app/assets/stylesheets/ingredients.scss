@@ -1,3 +1,61 @@
 // Place all the styles related to the Ingredients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ingredients {
+  @include span-columns(12);
+  $ingredient-height: 200px;
+
+  article {
+    @include span-columns(2);
+    @include omega(6n);
+
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    .image {
+      @include span-columns(2 of 2);
+      height: $ingredient-height;
+      background-size: auto $ingredient-height;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    a {
+      color: white;
+    }
+
+    a:visited {
+      color: white;
+    }
+
+    p {
+      color: white;
+      background-color: rgba(0,0,0, .5);
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    h2 {
+      background-color: rgba(0,0,0, .7);
+      height: 25px;
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .button-panel {
+      @include span-columns(2 of 2);
+    }
+
+    .button-panel form.button_to input {
+      @include span-columns(1 of 2, table);
+      float: left;
+      margin: 0px;
+
+      // &:first-child {
+      //   margin-right: 2px;
+      // }
+    }
+  }
+}

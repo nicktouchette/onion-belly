@@ -1,4 +1,5 @@
 header.navigation {
+  @include outer-container();
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
@@ -22,13 +23,11 @@ header.navigation {
   background-color: transparentize($navigation-background, 0.3);
   border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
-  width: $nav-width;
-  margin: 0 auto;
+  width: 100%;
   z-index: 999;
 
   .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
     position: relative;
     z-index: 9999;
   }

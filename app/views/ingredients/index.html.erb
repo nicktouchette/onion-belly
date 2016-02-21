@@ -1,18 +1,16 @@
 <h1>Ingredients</h1>
 <%= button_to "Add Ingredient", ingredient_new_path, :method => :get %>
-<div class="ingredients">
+<section class="ingredients">
   <% @ingredients.each do |ingredient| %>
-<!--     <div class="container"> -->
-      <div class="ingredient">
-        <h2><%= link_to ingredient.name, ingredient_path(ingredient) %></h2>
-        <div class="image" style="background-image: url(<%=ingredient.image%>)"></div>
-        <p><%= ingredient.food_group %></p>
+    <article>
+      <h2><%= link_to ingredient.name, ingredient_path(ingredient) %></h2>
+      <div class="image" style="background-image: url(<%=ingredient.image%>)"></div>
+      <p><%= ingredient.food_group %></p>
 
-        <div class="button-panel">
-          <%= button_to "Edit", ingredient_edit_path(ingredient), :method => :get %>
-          <%= button_to "Delete", ingredient, :method => :delete %>
-        </div>
+      <div class="button-panel">
+        <%= button_to "Edit", ingredient_edit_path(ingredient), :method => :get %>
+        <%= button_to "Delete", ingredient, :method => :delete %>
       </div>
-    <!-- </div> -->
+    </article>
   <%end%>
-</div>
+</section>

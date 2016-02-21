@@ -12,11 +12,14 @@
  */
 
 @import "bourbon";
+// $visual-grid: true !default;
+
 @import "neat";
 @import "base/base";
 @import "search";
 @import "flashmessages";
 @import "navigation";
+@import "ingredients";
 
 html {
   background: asset_url("chopping-board-texture.jpg") no-repeat center center fixed;
@@ -34,72 +37,10 @@ body {
   a {
     color: yellow;
   }
-}
 
-.ingredient {
-  $width: 200px;
-
-  @include size($width auto);
-  border: 1px solid black;
-  margin-bottom: 5px;
-
-  .image {
-    @include size($width 200px);
-    background-size: auto 200px;
-    background-repeat: no-repeat;
-    background-position: center center;
+  main {
+    @include outer-container();
   }
-
-  a {
-    color: white;
-  }
-
-  a:visited {
-    color: white;
-  }
-
-  p {
-    width: $width;
-    color: white;
-    background-color: rgba(0,0,0, .5);
-    text-align: center;
-    margin-top: -25px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    background-color: rgba(0,0,0, .7);
-    height: 25px;
-    text-align: center;
-    margin-bottom: 0px;
-  }
-
-  .button-panel {
-    @include size($width 45px);
-  }
-
-  .button-panel input.ajax_trigger {
-    @include size(100%)
-  }
-
-  .button-panel input {
-    @include size(($width / 2 - 1) 45px);
-    float: left;
-    margin: 0px;
-
-    &:first-child {
-      margin-right: 2px;
-    }
-  }
-}
-
-.container {
-  margin: 5px;
-  float: left;
-}
-
-.navbar ul {
-  font-size: 32px;
 }
 
 #supplies {
@@ -125,10 +66,6 @@ body {
   @include padding(5px 20px null null)
 }
 
-#content {
-  @include outer-container;
-}
-
 @mixin panel() {
   background-color: rgba(4,4,4,.6);
   width: 400px;
@@ -146,7 +83,7 @@ form {
 }
 
 .login_form {
-  @include outer-container;
+  @include span-columns(12);
   @include shift(2);
   margin-top: 20vh;
 
@@ -154,6 +91,7 @@ form {
     @include span-columns(3);
     margin: 20px;
     height: 416px;
+    width: auto;
   }
 }
 
@@ -171,4 +109,16 @@ form.edit_ingredient {
 form.new_ingredient {
   @include panel;
   width: 75%;
+}
+
+#test {
+  @include span-columns(12);
+
+  article {
+    @include span-columns(2 of 12);
+    // @include omega(4n);
+    background-color: black;
+    border: 2px solid green;
+    height: 55px;
+  }
 }

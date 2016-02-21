@@ -12,13 +12,11 @@
     <%= render 'layouts/navigation' %>
   <%end%>
   <!-- Status Messages -->
-  <div id="messages"><%= render 'layouts/messages' %></div>
+  <%= render 'layouts/messages' %>
 
+  <!-- Main content -->
   <main>
-    <!-- Main content -->
-    <div id="content">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </main>
 </body>
 

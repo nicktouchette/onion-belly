@@ -18,6 +18,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  @include pad();
 
   &:hover,
   &:focus {
