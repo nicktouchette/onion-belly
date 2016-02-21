@@ -3,7 +3,7 @@
 <section class="ingredients">
   <% @ingredients.each do |ingredient| %>
     <article>
-      <h2><%= link_to ingredient.name, ingredient_path(ingredient) %></h2>
+      <h3><%= link_to ingredient.name, ingredient_path(ingredient) %></h3>
       <div class="image" style="background-image: url(<%=ingredient.image%>)"></div>
       <p><%= ingredient.food_group %></p>
 

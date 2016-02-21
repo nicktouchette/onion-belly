@@ -38,6 +38,13 @@ body {
     color: yellow;
   }
 
+  h1 {
+    font-size: em(72);
+  }
+  h2 {
+    font-size: 36px;
+  }
+
   main {
     @include outer-container();
   }
@@ -50,6 +57,7 @@ body {
 
 #supplies {
   @include span-columns(8);
+  margin: 20px 0 0 0;
 
   li {
     display: inline;
@@ -79,7 +87,6 @@ body {
   background-color: rgba(4,4,4,.6);
   padding: 10px;
   border-radius: 15px;
-  // margin: 20px;
 
   h2 {
     font-size: 36px;
@@ -90,19 +97,25 @@ form {
   margin: 0 auto;
 }
 
-.login_form {
+.user_signup,
+.user_login {
   @include span-columns(12);
   @include shift(2);
   margin-top: 20vh;
 
   img {
     @include span-columns(3);
-    height: 416px;
+    height: 357px;
+    width: auto;
+  }
+
+  form {
+    @include panel(5);
   }
 }
 
-form#new_user {
-  @include panel(5);
+.user_edit {
+
 }
 
 form#edit_user {
@@ -120,13 +133,13 @@ form.new_ingredient {
   @include shift(3);
 }
 
-#test {
-  @include span-columns(12);
+// #test {
+//   @include span-columns(12);
 
-  article {
-    @include span-columns(2 of 12);
-    background-color: black;
-    border: 2px solid green;
-    height: 55px;
-  }
-}
+//   article {
+//     @include span-columns(2 of 12);
+//     background-color: black;
+//     border: 2px solid green;
+//     height: 55px;
+//   }
+// }
