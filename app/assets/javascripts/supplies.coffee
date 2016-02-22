@@ -4,6 +4,3 @@
 
 $(document).on 'ajax:success', 'a[data-remote]', (e, data, status, xhr) ->
   $(this).parent().remove()
-
-$(document).on 'ajax:success', 'input[data-remote]', (e, data, status, xhr) ->
-  console.log("WORKED")

@@ -23,10 +23,8 @@ $(document).ready (function() {
   $('#new_supply').submit(function() {
     $('.typeahead').typeahead('close');
   }).on('ajax:error', function (evt, xhr, status, error) {
-    $('input:text').val('');
-    console.log("Ingredient Exists");
+    $('.tt-input').val('');
   }).on('ajax:complete', function () {
-    $('input:text').val('');
-    console.log("Ingredient Exists");
+    $('.tt-input').val('');
   });
 });
